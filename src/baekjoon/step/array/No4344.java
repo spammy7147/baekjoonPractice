@@ -1,4 +1,4 @@
-package baekjoon.array;
+package baekjoon.step.array;
 
 import java.io.BufferedReader;
 

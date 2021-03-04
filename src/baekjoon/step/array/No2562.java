@@ -1,4 +1,4 @@
-package baekjoon.array;
+package baekjoon.step.array;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,36 +6,37 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class No3052 {
+public class No2562 {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-
+		
 		BufferedReader br =  new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		int[] array = new int[10];
-		boolean[] bool = new boolean[42];
-		int count = 0;
 		
-		for(int i = 0; i < array.length; i++) {
-			array[i] = Integer.parseInt(br.readLine())%42;
+		int[] nums = new int[9];
+		int max = nums[0];
+		int count=0;
+		
+		for(int i = 0; i < nums.length; i++) {
+			
+			nums[i] = Integer.parseInt(br.readLine());
+			
 		}
 		
-		for(int i : array) {
-			bool[i] = true;
-		}
 		
-		for (boolean i : bool) {
-			if(i) {
-				count++;
+		for(int i = 0; i < nums.length; i++) {
+				
+			if(nums[i] > max) {
+				max = nums[i];
+				count = i+1;
+			}	
+				
 			}
-		}
-		br.close();
-		bw.write(count+"\n");
+		bw.write(max + "\n");
+		bw.write(count + "\n");
 		bw.flush();
 		bw.close();
-		
-		
 	}
 
 }
